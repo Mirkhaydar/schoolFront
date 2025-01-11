@@ -1,0 +1,135 @@
+.home {
+    .hero {
+      background-color: #fff;
+      padding: 4rem 2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+  
+      .heroContent {
+        .logo {
+          margin-bottom: 2rem;
+          border-radius: 50%;
+        }
+        .title {
+          font-size: 3rem;
+          font-weight: bold;
+          margin-bottom: 2rem;
+          color: #222;
+  
+          .highlight {
+            color: #00b96b;
+          }
+        }
+  
+        .heroButton {
+          background-color: #00b96b;
+          border: none;
+          margin-bottom: 2rem;
+  
+          &:hover {
+            background-color: #00a55e;
+          }
+        }
+  
+        .trustpilot {
+          display: flex;
+          align-items: center;
+          font-size: 0.9rem;
+          color: #555;
+  
+          .reviewsCount {
+            margin: 0 0.5rem;
+            font-weight: bold;
+          }
+          .trustpilotLink {
+            color: #00b96b;
+            text-decoration: none;
+  
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+  
+      .languageCard {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+        .languageCardTitle {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+          padding: 1rem;
+          border-bottom: 1px solid #f0f0f0;
+        }
+  
+        .languageItem {
+          display: flex;
+          align-items: center;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          transition: background-color 0.2s;
+          border-radius: 5px;
+          width: fit-content;
+  
+          &:hover {
+            background-color: #f0f0f0;
+          }
+  
+          .languageFlag {
+            margin-right: 0.5rem;
+          }
+  
+          .languageName {
+            font-size: 1rem;
+            color: #222;
+          }
+        }
+      }
+    }
+  
+    .statistics {
+      background-color: #f2f2f2;
+      padding: 4rem 2rem;
+      text-align: center;
+  
+      .sectionTitle {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        color: #222;
+      }
+  
+      .statisticsGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        .statisticItem {
+          background-color: #fff;
+          padding: 2rem;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+      }
+    }
+  
+    .reviewsSection {
+      padding: 4rem 2rem;
+  
+      .sectionTitle {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        color: #222;
+      }
+  
+      .reviewsGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+    }
+  }
