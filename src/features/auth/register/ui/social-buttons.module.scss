@@ -1,0 +1,34 @@
+// features/auth/ui/social-buttons.module.scss
+.socialButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  
+    .socialButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      color: #222;
+      font-weight: 600;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  
+      &:hover,
+      &:focus {
+        background-color: transparent; // Ant Design overrides
+        color: #222;
+        border-color: #999;
+      }
+  
+      span {
+        margin-left: 8px;
+      }
+    }
+  }
+    .separator {
+      text-align: center;
+      margin: 20px 0;
+      color: #777;
+  }

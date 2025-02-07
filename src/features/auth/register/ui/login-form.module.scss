@@ -1,0 +1,13 @@
+// features/auth/ui/login-form.module.scss
+.forgotPasswordItem {
+    text-align: right;
+  
+      .forgotPassword {
+      padding: 0; // Ant Design button override
+    }
+  }
+  
+  .changeAuthType { // Если этот стиль нужен только в LoginForm
+    text-align: right;
+    margin-top: -10px;
+  }

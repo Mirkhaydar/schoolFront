@@ -23,9 +23,9 @@ const HomeView: React.FC = () => {
   // ];
 
   const statistics = [
-    { title: 'Зарегистрированных учащихся', value: 120, suffix: 'М', color: '#3f8600', icon: <CheckCircleOutlined /> },
-    { title: 'Часов обучения от А1 до С1', value: 2500, suffix: '+', color: '#08979c', icon: <ArrowUpOutlined /> },
-    { title: 'Исправлений от сообщества в 2023', value: 76, suffix: 'М', color: '#d48806', icon: <ArrowUpOutlined /> },
+    { title: 'Зарегистрированных учащихся', value: 120, suffix: 'М', color: '#3f8600', icon: <CheckCircleOutlined style={{ height: '24px', width: '24px' }} className={styles.statisticIcon} /> },
+    { title: 'Часов обучения от А1 до С1', value: 2500, suffix: '+', color: '#08979c', icon: <ArrowUpOutlined style={{ height: '24px', width: '24px' }} className={styles.statisticIcon} /> },
+    { title: 'Исправлений от сообщества в 2023', value: 76, suffix: 'М', color: '#d48806', icon: <ArrowUpOutlined style={{ height: '24px', width: '24px' }} className={styles.statisticIcon} /> },
   ];
 
   const languages = [
@@ -103,14 +103,14 @@ const HomeView: React.FC = () => {
         </div>
       </section>
 
-      <section className={styles.reviewsSection}>
+      {/* <section className={styles.reviewsSection}>
         <h2 className={styles.sectionTitle}>Отзывы</h2>
-        {/* <div className={styles.reviewsGrid}>
+        <div className={styles.reviewsGrid}>
           {reviews.map((review) => (
             // <ReviewCard key={review.author} review={review} />
           ))}
-        </div> */}
-      </section>
+        </div>
+      </section> */}
     </div>
   );
 };
