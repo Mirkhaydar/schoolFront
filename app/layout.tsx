@@ -1,7 +1,8 @@
+// app/layout.tsx (CORRECTED - Header inside Providers)
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 
+import "./globals.css";
 import { Header } from "@/widgets/header/ui/header";
 
 import Providers from "./providers";
@@ -29,9 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <Header />
-
-      <Providers> {children}  </Providers>
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );

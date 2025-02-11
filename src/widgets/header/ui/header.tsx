@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
             <Button type="link" href="/about">About</Button>
           </li>
           <li>
-            <Button type="primary" href="/register">Login</Button>
+            <Button type="primary" href="/authorization">Login</Button>
           </li>
         </ul>
       </nav>

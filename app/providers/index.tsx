@@ -1,8 +1,10 @@
+'use client';
+
 import React from "react"
 
 import { AntdRegistry } from "@ant-design/nextjs-registry"
 
-import { MobXProvider } from "./mobx-provider"
+import { ReduxProvider } from "./redux-provider"
 
 interface ProvidersProps {
   children: React.ReactNode
@@ -10,11 +12,13 @@ interface ProvidersProps {
 
 const Providers: React.FC<ProvidersProps> = ({ children }) => {
   return (
+    <ReduxProvider>
+
     <AntdRegistry>
-      <MobXProvider>
-        {children}
-      </MobXProvider>
+      {children}
     </AntdRegistry>
+    </ReduxProvider>
+
   )
 }
 

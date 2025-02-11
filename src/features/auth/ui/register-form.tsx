@@ -1,21 +1,28 @@
 // features/auth/ui/register-form.tsx
 'use client';
-import { observer } from 'mobx-react-lite';
+import React from 'react';
+
 import { Button, Form, Input, Alert } from 'antd';
 import { useRouter } from 'next/navigation';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { AppDispatch, RootState } from '@/app/stores/root-store';
+
+import { register, setRegisterName, setRegisterEmail, setRegisterPassword } from '../model/auth.slice';
 import { RegisterFormValues } from '../model/auth.types';
-import { useAuthStore } from '../model/login.store';
 
-import styles from './register-form.module.scss';
 
-export const RegisterForm = observer(() => {
-  const store = useAuthStore();
+export const RegisterForm:React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
   const [form] = Form.useForm<RegisterFormValues>();
 
+  const { registerName, registerEmail, registerPassword, isLoading, error } = useSelector(
+    (state: RootState) => state.auth
+  );
+
   const onFinish = (values: RegisterFormValues) => {
-    store.register(new Event('submit'), router, values);
+    dispatch(register(values, router));
   };
 
   return (
@@ -26,8 +33,8 @@ export const RegisterForm = observer(() => {
         rules={[{ required: true, message: 'Введите ваше имя!' }]}
       >
         <Input
-          value={store.registerName}
-          onChange={(e) => store.setRegisterName(e.target.value)}
+          value={registerName}
+          onChange={(e) => dispatch(setRegisterName(e.target.value))}
         />
       </Form.Item>
 
@@ -40,8 +47,8 @@ export const RegisterForm = observer(() => {
         ]}
       >
         <Input
-          value={store.registerEmail}
-          onChange={(e) => store.setRegisterEmail(e.target.value)}
+          value={registerEmail}
+          onChange={(e) => dispatch(setRegisterEmail(e.target.value))}
         />
       </Form.Item>
 
@@ -51,17 +58,17 @@ export const RegisterForm = observer(() => {
         rules={[{ required: true, message: 'Введите ваш пароль!' }]}
       >
         <Input.Password
-          value={store.registerPassword}
-          onChange={(e) => store.setRegisterPassword(e.target.value)}
+          value={registerPassword}
+          onChange={(e) => dispatch(setRegisterPassword(e.target.value))}
         />
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" loading={store.isLoading} block>
+        <Button type="primary" htmlType="submit" loading={isLoading} block>
           Зарегистрироваться
         </Button>
       </Form.Item>
-      {store.error && <Alert message={store.error} type="error" showIcon />}
+      {error && <Alert message={error} type="error" showIcon />}
     </Form>
   );
-});
+};

@@ -1,23 +1,31 @@
 // features/auth/ui/login-form.tsx
 'use client';
-import { observer } from 'mobx-react-lite';
+import React from 'react';
+
 import { Button, Form, Input, Alert } from 'antd';
 import { useRouter } from 'next/navigation';
+import { useDispatch, useSelector } from 'react-redux'; // Import Redux hooks
 
+import { AppDispatch, RootState } from '@/app/stores/root-store';
+
+import { login, setLoginEmail, setLoginPassword } from '../model/auth.slice'; // Import actions
 import { LoginFormValues } from '../model/auth.types';
-import { useAuthStore } from '../model/login.store';
 
 import styles from './login-form.module.scss';
 import { SocialButtons } from './social-buttons';
 
 
-export const LoginForm = observer(() => {
-  const store = useAuthStore();
+export const LoginForm: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
   const [form] = Form.useForm<LoginFormValues>();
 
+  const { loginEmail, loginPassword, isLoading, error } = useSelector(
+    (state: RootState) => state.auth
+  );
+
   const onFinish = (values: LoginFormValues) => {
-    store.login(new Event('submit'), router, values);
+    dispatch(login(values, router));
   };
 
   return (
@@ -32,8 +40,8 @@ export const LoginForm = observer(() => {
         ]}
       >
         <Input
-          value={store.loginEmail}
-          onChange={(e) => store.setLoginEmail(e.target.value)}
+          value={loginEmail}
+          onChange={(e) => dispatch(setLoginEmail(e.target.value))}
         />
       </Form.Item>
 
@@ -43,8 +51,8 @@ export const LoginForm = observer(() => {
         rules={[{ required: true, message: 'Введите ваш пароль!' }]}
       >
         <Input.Password
-          value={store.loginPassword}
-          onChange={(e) => store.setLoginPassword(e.target.value)}
+          value={loginPassword}
+          onChange={(e) => dispatch(setLoginPassword(e.target.value))}
         />
       </Form.Item>
 
@@ -55,11 +63,11 @@ export const LoginForm = observer(() => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" loading={store.isLoading} block>
+        <Button type="primary" htmlType="submit" loading={isLoading} block>
           Войти
         </Button>
       </Form.Item>
-      {store.error && <Alert message={store.error} type="error" showIcon />}
+      {error && <Alert message={error} type="error" showIcon />}
     </Form>
   );
-});
+};

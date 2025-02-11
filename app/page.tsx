@@ -1,6 +1,6 @@
 'use client'
 
-import HomeView from "@/pages/home/ui/home";
+import HomeView from "@/page-components/home/ui/home";
 // app/page.tsx
 
 export default function Home() {

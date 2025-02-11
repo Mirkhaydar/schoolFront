@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
 
-import { RegisterForm } from '@/features/auth/register';
+import RegisterPage from '@/page-components/register'
 
 
 export const metadata: Metadata = {
   title: 'Регистрация',
 };
 
-export default function RegisterPage() {
+export default function RegisterPageCollect() {
   return (
     <div>
-      <RegisterForm />
+      <RegisterPage />
     </div>
   );
 }
