@@ -1,8 +1,7 @@
 // features/auth/ui/social-buttons.tsx
 'use client';
 import { Button } from 'antd';
-import { AppleOutlined, FacebookOutlined } from '@ant-design/icons';
-import { AiFillGoogleCircle } from 'react-icons/ai';
+import { AiFillGoogleCircle, AiFillApple, AiFillFacebook } from 'react-icons/ai';
 
 import styles from './social-buttons.module.scss';
 
@@ -11,10 +10,10 @@ export const SocialButtons = () => (
     <Button icon={<AiFillGoogleCircle />} block className={styles.socialButton}>
       Вход с аккаунтом Google
     </Button>
-    <Button icon={<AppleOutlined />} block className={styles.socialButton}>
+    <Button icon={<AiFillApple />} block className={styles.socialButton}>
       Продолжить с Apple
     </Button>
-    <Button icon={<FacebookOutlined />} block className={styles.socialButton}>
+    <Button icon={<AiFillFacebook />} block className={styles.socialButton}>
       Продолжить с Facebook
     </Button>
     <div className={styles.separator}>или</div>

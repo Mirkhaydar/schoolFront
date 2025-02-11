@@ -1,11 +1,8 @@
 import React from 'react';
 
 import { Card, List, Rate, Statistic } from 'antd';
-import {
-  CheckCircleOutlined,
-  ArrowUpOutlined,
-} from '@ant-design/icons';
 import Image from 'next/image';
+import { FaCheckCircle, FaArrowUp } from 'react-icons/fa';
 
 import { Button } from '@/shared/ui/button';
 
@@ -23,9 +20,9 @@ const HomeView: React.FC = () => {
   // ];
 
   const statistics = [
-    { title: 'Зарегистрированных учащихся', value: 120, suffix: 'М', color: '#3f8600', icon: <CheckCircleOutlined style={{ height: '24px', width: '24px' }} className={styles.statisticIcon} /> },
-    { title: 'Часов обучения от А1 до С1', value: 2500, suffix: '+', color: '#08979c', icon: <ArrowUpOutlined style={{ height: '24px', width: '24px' }} className={styles.statisticIcon} /> },
-    { title: 'Исправлений от сообщества в 2023', value: 76, suffix: 'М', color: '#d48806', icon: <ArrowUpOutlined style={{ height: '24px', width: '24px' }} className={styles.statisticIcon} /> },
+    { title: 'Зарегистрированных учащихся', value: 120, suffix: 'М', color: '#3f8600', icon: <FaCheckCircle style={{ height: '24px', width: '24px' }} className={styles.statisticIcon} /> },
+    { title: 'Часов обучения от А1 до С1', value: 2500, suffix: '+', color: '#08979c', icon: <FaArrowUp style={{ height: '24px', width: '24px' }} className={styles.statisticIcon} /> },
+    { title: 'Исправлений от сообщества в 2023', value: 76, suffix: 'М', color: '#d48806', icon: <FaArrowUp style={{ height: '24px', width: '24px' }} className={styles.statisticIcon} /> },
   ];
 
   const languages = [
