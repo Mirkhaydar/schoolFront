@@ -22,9 +22,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/app/*": ["app/*"]
+      "@/app/*": ["app/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/**/*", "eslint.config.mjs", ".storybook/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".next"]
 }

@@ -38,15 +38,15 @@ const HomeView: React.FC = () => {
     <div className={styles.home}>
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-            <Image 
-            src="/images/logo.png" 
+            {/* <Image 
+            src="/images/logo.jpg" 
             alt="logo" 
-            width={64}
-            height={64}
+            width={150}
+            height={150}
             className={styles.logo}
-            />
+            /> */}
           <h1 className={styles.title}>
-            Изучай <span className={styles.highlight}>Итальянский</span>
+            Изучай <span className={styles.highlight}>Языки</span>
             <br />
             для реальной жизни
           </h1>

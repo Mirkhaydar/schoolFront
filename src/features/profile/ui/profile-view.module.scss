@@ -1,0 +1,24 @@
+// filepath: src/features/profile/ui/profile-view.module.scss
+.profile {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  
+    .header {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  
+      .detailItem {
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }

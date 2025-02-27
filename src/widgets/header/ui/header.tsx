@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>My App</div>
+      <div className={styles.logo}>LaLeGo</div>
       <nav>
         <ul className={styles.nav}>
           <li>
