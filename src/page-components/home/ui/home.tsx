@@ -23,6 +23,7 @@ import {
 } from 'react-icons/fa';
 
 import { Button } from '@/shared/ui/button';
+import turkeyStudyImage from 'public/turkey_study.png';
 
 import styles from './home-view.module.scss';
 
@@ -215,7 +216,7 @@ const HomeView: React.FC = () => {
         
         <div className={styles.heroImageContainer}>
           <Image
-            src="/turkey_study.png"
+            src={turkeyStudyImage} // Используем импортированную переменную
             alt="Обучение в Турции"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
