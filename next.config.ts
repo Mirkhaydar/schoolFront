@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // Добавляем basePath
-  basePath: '/school_frontend', // Замените на /имя_вашего_репозитория, если оно другое
+  // Исправляем basePath
+  basePath: '/schoolFront', // Используем имя репозитория из URL
   images: {
     unoptimized: true,
   },
