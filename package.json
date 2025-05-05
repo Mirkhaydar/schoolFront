@@ -11,6 +11,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@ant-design/icons": "^6.0.0",
     "@ant-design/nextjs-registry": "^1.0.2",
     "@reduxjs/toolkit": "^2.5.1",
     "@storybook/addon-actions": "^8.5.3",

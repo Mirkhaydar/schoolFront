@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Card, List, Statistic, Row, Col, Modal, Form, Input, message } from 'antd';
+
+import { Card, Statistic, Row, Col, Modal, Form, Input, message } from 'antd';
 import Image from 'next/image';
 import { 
   FaUniversity, 
@@ -15,8 +16,6 @@ import {
   FaLandmark,
   FaQuoteLeft,
   FaStar,
-  FaPhone,
-  FaEnvelope,
   FaWhatsapp,
   FaTelegram,
   FaArrowRight,
