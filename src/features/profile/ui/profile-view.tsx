@@ -1,4 +1,3 @@
-// filepath: src/features/profile/ui/profile-view.tsx
 'use client';
 import React from 'react';
 
