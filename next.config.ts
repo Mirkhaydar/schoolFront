@@ -2,7 +2,10 @@
 const nextConfig = {
   output: 'export',
   basePath: '/schoolFront',
-  // Убираем unoptimized: true, чтобы Next.js корректно обрабатывал пути
+  // Возвращаем unoptimized: true, так как это необходимо для статического экспорта с <Image>
+  images: {
+    unoptimized: true,
+  },
   // Другие ваши конфигурации...
 };
 
